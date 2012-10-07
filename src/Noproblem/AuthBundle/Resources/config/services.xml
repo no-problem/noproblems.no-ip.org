@@ -4,17 +4,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="nobroblem_auth.example.class">Noproblem\AuthBundle\Example</parameter>
+        <parameter key="noproblem.oauth.user_provider.class">Noproblem\AuthBundle\Security\User\OAuthUserProvider</parameter>
+        <parameter key="noproblem.oauth.user_entity.class">Noproblem\AuthBundle\Entity\OAuthUser</parameter>
     </parameters>
 
     <services>
-        <service id="nobroblem_auth.example" class="%nobroblem_auth.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="noproblem.oauth.user_provider" class="%noproblem.oauth.user_provider.class%">
+            <argument type="service" id="doctrine" />
+            <argument>%noproblem.oauth.user_entity.class%</argument>
+            <argument type="collection" />
         </service>
     </services>
-    -->
 </container>
