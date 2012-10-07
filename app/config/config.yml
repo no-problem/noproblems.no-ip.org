@@ -57,3 +57,13 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: secured_area
+    resource_owners:
+        any_name:
+            type:                google
+            client_id:           000000000000.apps.googleusercontent.com
+            client_secret:       XXXXXXXXXXXXXXXXXXXXXXXX
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"

@@ -34,6 +34,13 @@ security:
             logout:
                 path:   /demo/secured/logout
                 target: /demo/
+            oauth:
+                resource_owners:
+                    google:        "/login/check-google"
+                login_path:        /login
+                failure_path:      /login
+                oauth_user_provider:
+                    service: noproblem.oauth.user_provider
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
